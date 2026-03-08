@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/explore.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" href="assets/icon.png">
     <title>Explore - UK Drum and Bass</title>
 </head>
@@ -16,22 +17,67 @@
         <a href="bibliography.html">bibliography</a>
     </div>
     <div id="divider"></div>
-    <div class="content">
-
+    <!-- SECTION 1 -->
+    <h1>
+        Introduction
+    </h1>
+    <button onclick="skipToContent()">
+        Skip to Content
+    </button>
+    <div class="row animation" data-animation="fade-in-bottom">
+        <!-- TODO: this is just filler text from wikipedia, rewrite to provide a more cohesive background after integrating all the visualizations -->
+            <p>
+            Drum and bass began as a musical paradigm shift of the United Kingdom breakbeat hardcore and rave scene of the mid 1990s; and over the first decade and a half of its existence there have been many permutations in its style, incorporating elements from dancehall, electro, funk, hip hop, house, jazz, pop-created fusion of hardcore, house and techno (also including new beat). This scene existed briefly from approximately 1989-1993, a period of cross-pollination in the UK hardcore sound. This sound did survive in various forms in its mother countries - primarily Belgium, the Netherlands and Germany - beyond 1992, but by then the general scenes in these countries had moved forwards to trance, industrial techno or Gabber (with happy hardcore/hard house being the equivalent 'Belgian Techno' - derivative sounds in the UK). London and Bristol are the two cities which are most associated with Drum and Bass. Birmingham and the West Midlands also had an extensive influence, especially around Digbeth, acting as a hub for Drum and Bass, hosting some of the UKs fledgling drum and bass events and godfathers of the genre Goldie and Doc Scott both local to the area.
+        </p>
     </div>
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The first wave of drum and bass was characterised by a dark, menacing sound, with heavy use of the Amen break and other sampled breakbeats, deep basslines, and often dystopian or sci-fi themes. This sound was popularised by artists such as Goldie, Roni Size, and LTJ Bukem. The second wave of drum and bass, which emerged in the late 1990s and early 2000s, was characterised by a more polished and commercial sound, with a greater emphasis on melody and vocals. This sound was popularised by artists such as Pendulum, Chase & Status, and Sub Focus. The third wave of drum and bass, which emerged in the mid-2000s, was characterised by a more experimental and eclectic sound, with a greater emphasis on live instrumentation and genre-blending. This sound was popularised by artists such as Noisia, Calibre, and Alix Perez.
+        </p>
+    </div>
+
+    
+    <h1 id="content">
+        Content
+    </h1>
+    
+    <!-- SECTION 2 -->
+    <h2>
+        Global influence of UK Drum and Bass
+    </h2>
+
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            The following map visualizes clusters (green circles) of drum and bass releases from the Discogs data dumps, based on number of releases per country. You can adjust the slider to view different time periods.
+        </p>
+    </div>
+    <div class="row animation" data-animation="fade-in-bottom">
+        <p>
+            Clicking on a cluster will show the top 5 releases based on "have" count in Discogs, as well as the total number of releases from that country and time period.
+        </p>
+    </div>
+    <div class="content">
+        <div id="map" style="height: 700px; width: 100%;"></div>
+    
+        <div class="slider-container">
+            <p id="slider-text">Selected Period: <span id="period-display">1990-1994</span></p>
+            <input type="range" id="year-slider" min="0" max="6" step="1" value="0">
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <h2>
+        Significant Artist Relationships
+    </h2>
+
 </body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="scripts/explore.js"></script>
-<script type="module">
-    import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
-
-    const wavesurfer = WaveSurfer.create({
-        container: '#waveform',
-        waveColor: '#4F4A85',
-        progressColor: '#383351',
-        url: 'assets/07 movies for guys.mp3',
-        mediaControls: true,
-        autoScroll: true,
-    })
+<script>
+    window.onload = function() {
+        const slider = document.getElementById('year-slider');
+        slider.value = 0;
+        updateMap(0);
+    };
 </script>
-
 </html>

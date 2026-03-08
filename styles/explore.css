@@ -5,10 +5,16 @@ body {
 
 body {
     background-image: url("../assets/background.jpg");
-    display: inline-flex;
+    display: flex;
     padding: 50px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .navbar {
@@ -43,6 +49,15 @@ h1 {
     /* 100% */
 }
 
+h2 {
+    color: #4E1414;
+    font-family: Helvetica;
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 50px;
+    /* 100% */
+}
+
 p {
     color: #363636;
     text-align: justify;
@@ -55,15 +70,28 @@ p {
     text-underline-position: from-font;
 }
 
+button{
+    border-radius: 5px;
+    border: 2px solid #363636;
+    color: #363636;
+    font-family: Helvetica;
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.background-container {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
 .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-.row p {
-    margin-right: 50px;
 }
 
 .row img {
@@ -98,4 +126,29 @@ blockquote {
     padding-left: 10px;
     color: #4b4b4b;
     font-size: 2.5em;
+}
+
+#slider-text{
+    color: #363636;
+    font-family: Helvetica;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 35px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 16px;
+}
+
+#year-slider {
+    flex: 1;
+    width: 80%;
 }
