@@ -24,11 +24,11 @@
         </p>
 
         <p>
-            The Discogs database was used as the primary data source for the first two visualizations, which explore the geographic distribution of DnB releases over the past 30 years. The data was gathered using the <a>Discogs API</a> and a <a>python client</a>.
+            The Discogs database was used as the primary data source for the first two visualizations, which explore the geographic distribution of DnB releases over the past 30 years. The data was gathered using the <a href="https://www.discogs.com/developers/" target="_blank">Discogs API</a> and a <a href="https://github.com/joalla/discogs_client?tab=readme-ov-file" target="_blank">python client by Joalla</a>.
         </p>
 
         <p>
-            For the first visualization, the API was queried for releases with the style "Drum and Bass". These release objects had a country property which was geocoded to latitude longitude using the <a>OpenCage Geocoding API</a>. The resulting data was visualized using the <a>Leaflet JavaScript library</a>. To determine the top 5 releases to display, I utilized the "have" property of the release objects, which indicates how many users in the Discogs community have that release in their collection. I find this a reasonable metric as the top 5 releases is not meant to be an authoritative list but an approximate representation of some of the songs from that country.
+            For the first visualization, the API was queried for releases with the style "Drum and Bass". These release objects had a country property which was geocoded to latitude longitude using the <a href="https://opencagedata.com/" target="_blank">OpenCage Geocoding API</a>. The resulting data was visualized using the <a href="https://leafletjs.com/" target="_blank">Leaflet JavaScript library</a>. To determine the top 5 releases to display, I utilized the "have" property of the release objects, which indicates how many users in the Discogs community have that release in their collection. I find this a reasonable metric as the top 5 releases is not meant to be an authoritative list but an approximate representation of some of the songs from that country.
         </p>
 
         <p>
@@ -36,11 +36,11 @@
         </p>
 
         <p>
-            The third visualization draws from the RapidAPI "Spotify Extended Audio Features API", which was queried for some hand-picked songs and their associated audio_features values. These values are ML-computed by Spotify and are not easily interpretable, but it sufficed to compare the differences between London and Bristol DnB songs. The reason I chose 5 songs from each city was to have a small enough sample size to be able to meaningfully cross-reference the data with the song feeling and feasibly make API requests. Given more time on the project, I would have liked to expand the sample size. The data was processed and visualized using the <a>Chart.js JavaScript library</a>.
+            The third visualization draws from the RapidAPI "Spotify Extended Audio Features API", which was queried for some hand-picked songs and their associated audio_features values. These values are ML-computed by Spotify and are not easily interpretable, but it sufficed to compare the differences between London and Bristol DnB songs. The reason I chose 5 songs from each city was to have a small enough sample size to be able to meaningfully cross-reference the data with the song feeling and feasibly make API requests. Given more time on the project, I would have liked to expand the sample size. The data was processed and visualized using the <a href="https://www.chartjs.org/" target="_blank">Chart.js JavaScript library</a>.
         </p>
 
         <p>
-            See GitHub repository to reproduce data: <a href="https://github.com/your-repo" target="_blank">GITHUB</a>
+            See GitHub repository to reproduce data: <a href="https://github.com/chrissanrow/dnb_scripts" target="_blank">GITHUB</a>
         </p>
     </div>
 </body>
