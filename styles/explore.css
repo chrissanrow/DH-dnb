@@ -183,6 +183,7 @@ blockquote {
     padding: 10px;
     width: 200px;
     background-color: white;
+    cursor: pointer;
 }
 
 .song-card p{
